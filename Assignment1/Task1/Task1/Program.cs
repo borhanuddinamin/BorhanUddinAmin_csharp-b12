@@ -1,7 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 //TASK 1 Solution:
 
 //taking user Input of 2D array row Size
+
+ParameterizedThreadStart:
+
 
 Console.WriteLine("Please Enter The 2D Array Rows Number");
 
@@ -12,10 +16,12 @@ int row = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Please Enter The number of column");
 int coloum = Convert.ToInt32(Console.ReadLine());
 
-if (row < 3 || coloum < 3)||(row > 1000 || coloum > 1000))
+if ((row < 3 || coloum < 3) || (row > 1000 || coloum > 1000))
 {
-    Console.Writeline("Please Enter Row and column size from 3 to 1000");
-};
+    Console.WriteLine("Please Enter Row and column size from 3 to 1000\n");
+    goto ParameterizedThreadStart;
+}
+
 
 
 
@@ -38,7 +44,7 @@ for (int c = 0; c < row; c++)
 
 
         TwoDarray[c, f] = Convert.ToInt32(elements[f]);
-        Console.WriteLine(TwoDarray[c, f]);
+
 
     }
 
@@ -64,7 +70,7 @@ for (int i = 0; i < row; i++)
 
 
     }
- 
+
     RowSum[i] = sum;
 }
 
@@ -122,6 +128,4 @@ for (int x = 0; x < RowSum.Length; x++)
     }
 }
 
-Console.WriteLine(" Maximum sum value in  this Array : "RowSum[0]);
-
-
+Console.WriteLine(" Maximum sum value in  this Array : {0}", RowSum[0]);
