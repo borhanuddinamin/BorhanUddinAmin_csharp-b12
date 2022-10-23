@@ -1,7 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//Task 2 solution
-
-
+//task 2 solution
 double number1 = Double.MinValue;
 double number2 = Double.MinValue;
 double number3 = Double.MinValue;
