@@ -39,7 +39,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1328_A. Divisibility Proble
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "144_A. Arrival of the General", "144_A. Arrival of the General\144_A. Arrival of the General.csproj", "{AF909E58-EDAA-487C-B213-38E1B35634CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1753_B.Factorial Divisibility", "1753_B.Factorial Divisibility\1753_B.Factorial Divisibility.csproj", "{A70FDCE7-27CB-45D3-B38F-FC40B34AEA65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1753_B.Factorial Divisibility", "1753_B.Factorial Divisibility\1753_B.Factorial Divisibility.csproj", "{A70FDCE7-27CB-45D3-B38F-FC40B34AEA65}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1154_A. Restoring Three Numbers", "1154_A. Restoring Three Numbers\1154_A. Restoring Three Numbers.csproj", "{3B3CBE37-1F27-48D1-B985-0B0EF7A5F65D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1335_A. Candies and Two Sisters", "1335_A. Candies and Two Sisters\1335_A. Candies and Two Sisters.csproj", "{9CFDB00D-49CB-4CE9-B516-C315B4F5D943}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "148_A. Insomnia cure", "148_A. Insomnia cure\148_A. Insomnia cure.csproj", "{F2653AEE-91E8-42A9-9CC9-90238DFDB9D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1619_A. Square String", "1619_A. Square String\1619_A. Square String.csproj", "{275778CC-05B5-4DB1-B31B-078792715C57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1343_B. Balanced Array", "1343_B. Balanced Array\1343_B. Balanced Array.csproj", "{E15594A0-8F34-495A-A1E8-3F22248EA8A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +133,26 @@ Global
 		{A70FDCE7-27CB-45D3-B38F-FC40B34AEA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A70FDCE7-27CB-45D3-B38F-FC40B34AEA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A70FDCE7-27CB-45D3-B38F-FC40B34AEA65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3CBE37-1F27-48D1-B985-0B0EF7A5F65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3CBE37-1F27-48D1-B985-0B0EF7A5F65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3CBE37-1F27-48D1-B985-0B0EF7A5F65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3CBE37-1F27-48D1-B985-0B0EF7A5F65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CFDB00D-49CB-4CE9-B516-C315B4F5D943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFDB00D-49CB-4CE9-B516-C315B4F5D943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CFDB00D-49CB-4CE9-B516-C315B4F5D943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CFDB00D-49CB-4CE9-B516-C315B4F5D943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2653AEE-91E8-42A9-9CC9-90238DFDB9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2653AEE-91E8-42A9-9CC9-90238DFDB9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2653AEE-91E8-42A9-9CC9-90238DFDB9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2653AEE-91E8-42A9-9CC9-90238DFDB9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275778CC-05B5-4DB1-B31B-078792715C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275778CC-05B5-4DB1-B31B-078792715C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275778CC-05B5-4DB1-B31B-078792715C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275778CC-05B5-4DB1-B31B-078792715C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E15594A0-8F34-495A-A1E8-3F22248EA8A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E15594A0-8F34-495A-A1E8-3F22248EA8A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E15594A0-8F34-495A-A1E8-3F22248EA8A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E15594A0-8F34-495A-A1E8-3F22248EA8A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

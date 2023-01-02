@@ -24,65 +24,13 @@ int m = 0;
 
 remove.AddRange(ch);
 
-for (int b = 0; b < str2.Length; b++)
+
+HashSet<string> value = new HashSet<string >();
+foreach(var c in remove)
 {
 
-
-    for (int a =b+ 1; a< str2.Length; a++)
-    {
-        
-
-        if (ch[b] == ch[a])
-        {
-            //remove.RemoveAt(a - l)
-         Console.WriteLine( a );
-            Console.WriteLine(a - l);
-            l++;
-         
-       //ch = ch.Where(e => e == ch[a]).ToArray();
-
-        }
-        /*else if (ch[b] != ch[a])
-        {
-            m=m+1;
-            //ch = ch.Where(e => e == ch[a]).ToArray();
-            Console.WriteLine(m);
-        }*/
-    }
-    if (l >0)
-    {
-
-
-
-       
-    }
-   
+    value.Add(c);
 
 
 }
-
-foreach (var c in remove)
-{
-    Console.WriteLine(c);
-}
-
-
-Console.WriteLine(l);
-
-//Console.WriteLine(str2.Length );
-
-//Console.WriteLine(l);
-//Console.WriteLine(m);
-
-//Console.WriteLine(m);
-//Console.WriteLine(sum);
-/*for (int m=0; m< str2.Length;m++)
-    {
-        if (value2 == ch[m])
-        {
-            sum++;
-            Console.WriteLine(sum);
-        }
-        
-    }
-*/
+Console.WriteLine(value.Count);

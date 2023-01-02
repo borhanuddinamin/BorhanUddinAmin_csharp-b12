@@ -5,6 +5,106 @@ int[] intvalue = new int[line];
 
     string str = Console.ReadLine();
 intvalue = Array.ConvertAll(str.Split(' '), int.Parse);
+
+
+
+
+int max = 0;
+
+
+
+int postionChange = 0;
+
+
+for (int i = 1; i < line ; i++)
+{
+    if (intvalue[max] < intvalue[i ])
+    {
+
+        max = i ;
+
+    }
+   
+
+}
+
+
+
+for (int i= max; i >= 1; i--)
+    {
+        if (intvalue[i - 1] <= intvalue[i])
+        {
+
+            var ss = intvalue[i - 1];
+            intvalue[i - 1] = intvalue[i];
+            intvalue[i] = ss;
+            postionChange++;
+
+        }
+
+    }
+
+
+
+
+
+
+
+int min  = line-1;
+
+
+
+
+for (int i = line-1; i  >=  1; i--)
+{
+    if (intvalue[min] > intvalue[i-1 ])
+    {
+
+        min = i-1;
+        
+    }
+    
+
+}
+
+
+
+
+for (int i = min; i<line -1; i++)
+{
+    if (intvalue[i ] <= intvalue[i+1])
+    {
+
+        var ss = intvalue[i + 1];
+        intvalue[i + 1] = intvalue[i];
+        intvalue[i] = ss;
+        postionChange++;
+
+    }
+
+}
+
+
+if (max== 0 && min == intvalue.Length - 1)
+{
+    postionChange = 0;
+
+}
+
+
+
+
+Console.WriteLine(postionChange);
+
+
+
+
+
+
+
+
+
+/*
 int max_index= 0;
 int min_index = 0;
 int max_value = intvalue[0];
@@ -82,14 +182,15 @@ else if((max_Ds < middle) && (min_Ds < middle)&& (max_Ds > 1) && (min_Ds > 1))
 
     Console.WriteLine(result);
 }
-/*else if (min_Ds > middle)
+else if (min_Ds > middle)
 {
     result = result - 1;
-    //Console.WriteLine(min_Ds);
-}*/
+    Console.WriteLine(min_Ds);
+}
 //Console.WriteLine(max_Ds);
 //Console.WriteLine(min_Ds);
 
+*/
 
 
 
