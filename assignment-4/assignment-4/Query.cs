@@ -39,9 +39,12 @@ namespace assignment_4
 
             if (id == 1)
             {
-                var user = context.Admin.Where(u => u.UserName.Equals(_UserName)&& u.Password.Equals(_password) && u.Type == "Admin").FirstOrDefaultAsync();
-                //Console.WriteLine(user.UserName);UserName
-                if (user != null) 
+                var user = context.User.Where(u => u.UserName.Equals(_UserName)&&  u.Password.Equals(_password) && u.Type == "Admin").FirstOrDefault() ;
+               
+                
+              
+                
+                if (user !=null ) 
                 { return check = true; 
                 }
             }

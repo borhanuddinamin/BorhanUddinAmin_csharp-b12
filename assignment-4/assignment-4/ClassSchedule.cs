@@ -10,14 +10,11 @@ namespace assignment_4
     {
         public int ClassScheduleId { get; set; }
 
-        //public Course Course { get; set; }
         public int CourseId { get; set; }
         public String Day { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public int NumberofClass { get; set; }
-
-       // public Attendance Attendance { get; set; }
 
 
 
@@ -39,7 +36,7 @@ namespace assignment_4
         }
         public ClassSchedule(int CourseId, DateTime StartTime, DateTime EndTime) : this()
         {
-            // this.CourseId = CourseId;
+            this.CourseId = CourseId;
             this.StartTime = StartTime;
             this.EndTime = EndTime;
 

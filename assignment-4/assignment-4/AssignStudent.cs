@@ -10,9 +10,9 @@ namespace assignment_4
     public  class AssignStudent
     {
         public int AssignStudentId { get; set; }
-        public Course Course { get; set; }
+      
         public int CourseId { get; set; }
-        public Student Student { get; set; }
+      
         public int StudentId { get; set; }
         
     }

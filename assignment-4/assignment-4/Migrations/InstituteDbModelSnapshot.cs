@@ -38,11 +38,6 @@ namespace assignment_4.Migrations
 
                     b.HasKey("AssignStudentId");
 
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("StudentId")
-                        .IsUnique();
-
                     b.ToTable("AssignStudent");
                 });
 
@@ -62,9 +57,11 @@ namespace assignment_4.Migrations
 
                     b.HasKey("AssignTeacherId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("CourseId")
+                        .IsUnique();
 
-                    b.HasIndex("TeacherId");
+                    b.HasIndex("TeacherId")
+                        .IsUnique();
 
                     b.ToTable("AssignTeacher");
                 });
@@ -77,11 +74,11 @@ namespace assignment_4.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AttendanceId"), 1L, 1);
 
-                    b.Property<int>("ClassScheduleId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Ispresent")
                         .HasColumnType("bit");
@@ -93,13 +90,6 @@ namespace assignment_4.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("AttendanceId");
-
-                    b.HasIndex("ClassScheduleId");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("StudentId")
-                        .IsUnique();
 
                     b.ToTable("Attendance");
                 });
@@ -129,8 +119,6 @@ namespace assignment_4.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("ClassScheduleId");
-
-                    b.HasIndex("CourseId");
 
                     b.ToTable("ClassSchedule");
                 });
@@ -197,12 +185,18 @@ namespace assignment_4.Migrations
                 {
                     b.HasBaseType("assignment_4.User");
 
+                    b.Property<int>("AdminId")
+                        .HasColumnType("int");
+
                     b.HasDiscriminator().HasValue("Admin");
                 });
 
             modelBuilder.Entity("assignment_4.Student", b =>
                 {
                     b.HasBaseType("assignment_4.User");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Student");
                 });
@@ -211,39 +205,23 @@ namespace assignment_4.Migrations
                 {
                     b.HasBaseType("assignment_4.User");
 
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
                     b.HasDiscriminator().HasValue("Teacher");
-                });
-
-            modelBuilder.Entity("assignment_4.AssignStudent", b =>
-                {
-                    b.HasOne("assignment_4.Course", "Course")
-                        .WithMany("AssignStudent")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("assignment_4.Student", "Student")
-                        .WithOne("AssignStudent")
-                        .HasForeignKey("assignment_4.AssignStudent", "StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("assignment_4.AssignTeacher", b =>
                 {
                     b.HasOne("assignment_4.Course", "Course")
-                        .WithMany("AssignTeacher")
-                        .HasForeignKey("CourseId")
+                        .WithOne("AssignTeacher")
+                        .HasForeignKey("assignment_4.AssignTeacher", "CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("assignment_4.Teacher", "Teacher")
-                        .WithMany()
-                        .HasForeignKey("TeacherId")
+                        .WithOne("AssignTeacher")
+                        .HasForeignKey("assignment_4.AssignTeacher", "TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -252,61 +230,15 @@ namespace assignment_4.Migrations
                     b.Navigation("Teacher");
                 });
 
-            modelBuilder.Entity("assignment_4.Attendance", b =>
-                {
-                    b.HasOne("assignment_4.ClassSchedule", "ClassSchedule")
-                        .WithMany()
-                        .HasForeignKey("ClassScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("assignment_4.Course", "Course")
-                        .WithMany("Attendances")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("assignment_4.Student", "Student")
-                        .WithOne("Attendance")
-                        .HasForeignKey("assignment_4.Attendance", "StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ClassSchedule");
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("assignment_4.ClassSchedule", b =>
-                {
-                    b.HasOne("assignment_4.Course", "Course")
-                        .WithMany("ClassSchedule")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-                });
-
             modelBuilder.Entity("assignment_4.Course", b =>
                 {
-                    b.Navigation("AssignStudent");
-
-                    b.Navigation("AssignTeacher");
-
-                    b.Navigation("Attendances");
-
-                    b.Navigation("ClassSchedule");
+                    b.Navigation("AssignTeacher")
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("assignment_4.Student", b =>
+            modelBuilder.Entity("assignment_4.Teacher", b =>
                 {
-                    b.Navigation("AssignStudent")
-                        .IsRequired();
-
-                    b.Navigation("Attendance")
+                    b.Navigation("AssignTeacher")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

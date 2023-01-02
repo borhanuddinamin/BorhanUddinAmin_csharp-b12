@@ -11,15 +11,13 @@ namespace assignment_4
         public int CourseId { get; set; }
 
         public string CourseName { get; set; }
+        //public string CourseCode { get; set; }
         public int Fees { get; set; }
         public int TottalClass { get; set; }
       
-        public List<AssignStudent> AssignStudent { get; set; }
-        public List<AssignTeacher> AssignTeacher { get; set; }
-        //public IList<ClassSchedule> ClassSchedule { get; set; }
-
-
-        public List<Attendance> Attendances { get; set; }
+      
+        public AssignTeacher AssignTeacher { get; set; }
+                                                         
 
 
 

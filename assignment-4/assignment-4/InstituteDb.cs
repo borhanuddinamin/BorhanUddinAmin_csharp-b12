@@ -35,11 +35,51 @@ namespace assignment_4
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
+            
+            
+            /* modelBuilder.Entity<User>()
+     .Property(s => s.StudentId)
+     .ValueGeneratedOnAdd();
+
+
+
+
+
+           modelBuilder.Entity<Student>()
+                .Property(c => c.StudentId).HasDefaultValueSql("NEXT VALUE FOR MySequence"); ;
+
+
+            
+            modelBuilder.Entity<Course>()
+                .HasOne(c => c.Teacher)
+                .WithMany()
+                .HasFilter("Name = 'John Smith'");
+
+
+
+            modelBuilder.Entity<Student>()
+    .Property(s => s.StudentId)
+    .ValueGeneratedOnAdd()
+    .HasDefaultValueSql("Type=='Student'");
+
+
+            modelBuilder.Entity<Teacher>()
+    .Property(s => s.TeacherId)
+    .UseIdentityColumn();
+
+            modelBuilder.Entity<Admin>()
+    .Property(s => s.AdminId)
+    .UseIdentityColumn();
+
+
             /* modelBuilder.Entity<ClassSchedule>()
-     .HasOne(cs => cs.Course)
-     .WithMany(c => c.ClassSchedule)
-     .OnDelete(DeleteBehavior.NoAction);
-            modelBuilder.Entity<Attendance>()
+          .HasOne(cs => cs.Course)
+          .WithMany(c => c.ClassSchedule)
+          .OnDelete(DeleteBehavior.NoAction);*/
+
+
+            /*modelBuilder.Entity<Attendance>()
          .HasOne(cs => cs.ClassSchedule)
          .WithOne(a => a.Attendance)
          .HasForeignKey<ClassSchedule>(cs => cs.StartTime);*/
@@ -59,6 +99,7 @@ namespace assignment_4
         public DbSet<AssignTeacher> AssignTeacher { get; set; }
         public DbSet<AssignStudent> AssignStudent { get; set; }
         public DbSet<ClassSchedule> ClassSchedule { get; set; }
+        public DbSet<Attendance> Attendance { get; set; }
     }
     
 }
